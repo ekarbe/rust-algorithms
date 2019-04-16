@@ -1,19 +1,21 @@
-// Compares all elements of an array and 'bubbles'
-// them to the top.
-// Returns the sorted array.
 pub fn sort(arr: &mut [i32]) -> &mut [i32] {
-  let mut n = arr.len();
-  while n > 1 {
-    let mut newn = 0;
-    for i in 1..n {
-      if arr[i-1] > arr[i] {
-        let temp = arr[i-1];
-        arr[i-1] = arr[i];
-        arr[i] = temp;
-        newn = i;
+  let mut begin_i = 0;
+  let mut end_i = arr.len()-1;
+  while begin_i <= end_i {
+    let mut new_begin_i = end_i;
+    let mut new_end_i = begin_i;
+    for i in begin_i..end_i {
+      if arr[i] > arr[i + 1] {
+        new_end_i = i;
       }
     }
-    n = newn;
+    end_i = new_end_i - 1;
+    for i in end_i..begin_i {
+      if arr[i] > arr[i+1] {
+        new_begin_i = i;
+      }
+    }
+    begin_i = new_begin_i + 1;
   }
   return arr;
 }
