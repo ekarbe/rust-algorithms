@@ -1,2 +1,3 @@
-# rust-algorithms
-Training for Rust with algorithms
+# Rust Algorithms
+
+`cargo test` to test all algorithms.
