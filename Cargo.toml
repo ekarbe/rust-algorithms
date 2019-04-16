@@ -1,0 +1,7 @@
+[package]
+name = "rust-algorithms"
+version = "0.0.1"
+authors = ["Eike Christian Karbe <eichkarbe@yahoo.de>"]
+edition = "2018"
+
+[dependencies]
