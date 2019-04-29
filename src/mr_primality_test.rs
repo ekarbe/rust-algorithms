@@ -1,17 +1,5 @@
-extern crate num;
-extern crate rand;
-
-use rand::Rng;
-use num::pow::pow;
-
 pub fn is_prime(n: u64) -> bool {
-    if n < 3 || n % 2 == 0 {
-        return false;
-    }
-    let a = rand::thread_rng().gen_range(2, n-2);
-    let x = pow(a, 3);
-    
-    return true;
+    //todo
 }
 
 #[test]
