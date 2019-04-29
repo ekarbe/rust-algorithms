@@ -1,31 +1,17 @@
 pub fn sort(arr: &mut [i32]) -> &mut [i32] {
-    let mut begin_i = 0;
-    let mut end_i = arr.len() - 1;
-    let mut swapped = false;
+    let begin_i = 0;
+    let end_i = arr.len() - 1;
+    let mut swapped = true;
     while swapped {
         swapped = false;
-        while begin_i <= end_i {
-            let mut new_begin_i = end_i;
-            let mut new_end_i = begin_i;
-            for i in begin_i..end_i {
-                if arr[i] > arr[i + 1] {
-                    arr.swap(i, i + 1);
-                    new_end_i = i;
-                    swapped = true;
-                }
+        for i in begin_i..end_i {
+            if arr[i] > arr[i + 1] {
+                arr.swap(i + 1, i);
+                swapped = true;
             }
-            if !swapped {
-                break;
-            }
-            end_i = new_end_i - 1;
-            for i in end_i..begin_i {
-                if arr[i] > arr[i + 1] {
-                    arr.swap(i, i + 1);
-                    new_begin_i = i;
-                    swapped = true;
-                }
-            }
-            begin_i = new_begin_i + 1;
+        }
+        if !swapped {
+            break;
         }
     }
     return arr;
