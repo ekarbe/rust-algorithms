@@ -9,9 +9,7 @@ pub fn sort(arr: &mut [i32]) -> &mut [i32] {
             let mut new_end_i = begin_i;
             for i in begin_i..end_i {
                 if arr[i] > arr[i + 1] {
-                    let temp = arr[i + 1];
-                    arr[i + 1] = arr[i];
-                    arr[i] = temp;
+                    arr.swap(i, i + 1);
                     new_end_i = i;
                     swapped = true;
                 }
@@ -22,9 +20,7 @@ pub fn sort(arr: &mut [i32]) -> &mut [i32] {
             end_i = new_end_i - 1;
             for i in end_i..begin_i {
                 if arr[i] > arr[i + 1] {
-                    let temp = arr[i + 1];
-                    arr[i + 1] = arr[i];
-                    arr[i] = temp;
+                    arr.swap(i, i + 1);
                     new_begin_i = i;
                     swapped = true;
                 }
